@@ -1,6 +1,4 @@
-//BUTTONS
-let startButton = document.getElementById('start-button')
-let inflateButton = document.getElementById('inflate-button')
+
 
 // #region Game Logic and Data
 
@@ -19,9 +17,8 @@ let timeRemaining = 0
 let currentPlayer = {}
 
 function startGame() {
-
-    startButton.setAttribute("disabled", "true")
-    inflateButton.removeAttribute("disabled")
+    document.getElementById("game-controls").classList.remove("hidden")
+    document.getElementById("main-controls").classList.add("hidden")
     startClock()
     setTimeout(stopGame, gameLength)
 }
@@ -63,6 +60,7 @@ function draw() {
     let clickCountElem = document.getElementById("click-count")
     let popCountElem = document.getElementById('pop-count')
     let highPopCountElem = document.getElementById('high-pop-count')
+    let playerNameElem = document.getElementById('player-name')
 
     balloonElement.style.height = height + "px"
     balloonElement.style.width = width + "px"
@@ -70,13 +68,14 @@ function draw() {
     clickCountElem.innerText = clickCount.toString()
     popCountElem.innerText = currentPopCount.toString()
     highPopCountElem.innerText = currentPlayer.topScore.toString()
+    playerNameElem.innerText = currentPlayer.name
 }
 
 function stopGame() {
     console.log("the game is over")
 
-    inflateButton.setAttribute("disabled", "true")
-    startButton.removeAttribute("disabled")
+    document.getElementById("main-controls").classList.remove("hidden")
+    document.getElementById("game-controls").classList.add("hidden")
 
     clickCount = 0
     height = 120
@@ -130,7 +129,6 @@ function savePlayers() {
 function loadPlayers() {
     let playersData = JSON.parse(window.localStorage.getItem("players"))
     if (playersData) {
-        // players = []?
         players = playersData
     }
 }
