@@ -19,9 +19,11 @@ let currentColor = "aqua"
 let possibleColors = ["green", "blue", "purple", "yellow", "aqua"]
 
 function startGame() {
+    currentPopCount = 0
     document.getElementById("game-controls").classList.remove("hidden")
     document.getElementById("main-controls").classList.add("hidden")
     document.getElementById("scoreboard").classList.add("hidden")
+    document.getElementById("how-to").classList.add("hidden")
     startClock()
     setTimeout(stopGame, gameLength)
 }
@@ -94,6 +96,7 @@ function stopGame() {
     document.getElementById("main-controls").classList.remove("hidden")
     document.getElementById("game-controls").classList.add("hidden")
     document.getElementById("scoreboard").classList.remove("hidden")
+    document.getElementById("how-to-button").classList.remove("hidden")
 
     clickCount = 0
     height = 120
@@ -104,7 +107,7 @@ function stopGame() {
         savePlayers()
     }
 
-    currentPopCount = 0
+    //currentPopCount = 0
 
     stopClock()
     draw()
@@ -142,6 +145,7 @@ function changePlayer() {
 
     document.getElementById("player-form").classList.remove("hidden")
     document.getElementById("game").classList.add("hidden")
+    document.getElementById("how-to").classList.add("hidden")
 }
 function savePlayers() {
     window.localStorage.setItem("players", JSON.stringify(players))
@@ -153,6 +157,13 @@ function loadPlayers() {
     }
 }
 
+function howTo() {
+    document.getElementById("game-controls").classList.add("hidden")
+    document.getElementById("main-controls").classList.remove("hidden")
+    document.getElementById("scoreboard").classList.add("hidden")
+    document.getElementById("how-to-button").classList.add("hidden")
+    document.getElementById("how-to").classList.remove("hidden")
+}
 function drawScoreboard() {
     let template = ""
 

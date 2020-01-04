@@ -47,21 +47,26 @@
                         <span>Top Popped:</span>
                         <span id="high-pop-count">0</span>
                     </div>
+                    <div>
+                        <span>Balloons Popped:</span>
+                        <span id="pop-count">0</span>
+                    </div>
                 </div>
             </div>
 
             <div id="main-controls" class="d-flex space-around mt-2">
                 <button id="start-button" onclick="startGame()">START GAME</button>
                 <button onclick="changePlayer()">Change Player</button>
+                <button id="how-to-button" onclick="howTo()">How To Play</button>
             </div>
 
             <div id="game-controls" class="hidden">
-                <div>
+                <div class="text-center">
                     <span>Balloons Popped:</span>
                     <span id="pop-count">0</span>
                 </div>
 
-                <div>
+                <div class="text-center">
                     <span>Time Remaining:</span>
                     <span id="countdown">0</span>
                 </div>
@@ -81,6 +86,19 @@
         </section>
     </main>
 
+    <div id="how-to" class="container card mt-2 hidden">
+        <h3 class="text-center">How To Play</h3>
+        <h5 class="text-center">It's Simple!</h5>
+        <div class="text-center">
+            <span>Use the pink pump to inlfate your balloon!</span>
+        </div>
+        <div class="text-center">
+            <span>pop as many balloons as you can before the time runs out.</span>
+        </div>
+        <div class="text-center">
+            <span>Beat everyone's score to become the Top popper!</span>
+        </div>
+    </div>
 
     <div id="scoreboard" class="container card mt-2">
         <h2 class="text-center">Top Poppers</h2>
