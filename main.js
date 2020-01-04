@@ -20,6 +20,7 @@ let possibleColors = ["green", "blue", "purple", "yellow", "aqua"]
 
 function startGame() {
     currentPopCount = 0
+    draw()
     document.getElementById("game-controls").classList.remove("hidden")
     document.getElementById("main-controls").classList.add("hidden")
     document.getElementById("scoreboard").classList.add("hidden")
@@ -107,12 +108,11 @@ function stopGame() {
         savePlayers()
     }
 
-    //currentPopCount = 0
-
     stopClock()
     draw()
     drawScoreboard()
 }
+
 
 // #endregion
 
