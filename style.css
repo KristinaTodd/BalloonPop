@@ -157,11 +157,6 @@ button:hover{
     margin: auto;
 }
 
-@media screen and (max-width: 700px){
-    .container{
-        width: 90%;
-    }
-}
 
 .shadow{
     filter: drop-shadow(var(--shadow)); 
@@ -175,13 +170,13 @@ button:hover{
     color: var(--light);
 }
 
-
-.d-flex.space-around{
-    justify-content: space-around;
-}
 .d-flex{
     display: flex;
     align-items: center;
+}
+
+.d-flex.space-around{
+    justify-content: space-around;
 }
 
 .d-flex.space-between{
@@ -218,4 +213,19 @@ button:hover{
 
 .hidden{
     display: none !important;
+}
+
+.game-flex{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 700px){
+    .container{
+        width: 90%;
+    }
+    .d-flex{
+        display: block;
+        text-align: center;
+    }
 }
